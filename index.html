@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Awesome Asshole — Private Archive</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main class="shell">
+  <section class="card login-card" id="loginView">
+    <div class="mark">AA</div>
+    <p class="eyebrow">AWESOME ASSHOLE</p>
+    <h1>Private Archive</h1>
+    <p class="intro">Access is granted on a need-to-remember basis.</p>
+    <form id="loginForm" autocomplete="off">
+      <label>Archive identity<input id="username" name="username" autocomplete="username" placeholder="Today's alias" required></label>
+      <label>Archive password<input id="password" name="password" type="password" autocomplete="current-password" placeholder="Today's password" required></label>
+      <button type="submit">Request access</button>
+      <p class="error" id="error" role="alert" hidden>Those credentials don't appear to open this archive.</p>
+    </form>
+    <div class="fine">Döhneheim &amp; Hendasmere · Private Archive Administration</div>
+  </section>
+
+  <section class="card archive-card" id="archiveView" hidden>
+    <header class="archive-header">
+      <div><p class="eyebrow">AWESOME ASSHOLE / ARCHIVE</p><h1 id="memoryTitle"></h1></div>
+      <button class="quiet" id="logout">Lock archive</button>
+    </header>
+    <div class="rule"></div>
+    <p class="date" id="memoryDate"></p>
+    <article id="memoryBody" class="memory"></article>
+    <footer>SOME STORIES ARE WORTH KEEPING.</footer>
+  </section>
+</main>
+<script src="assets/app.js"></script>
+</body>
+</html>
