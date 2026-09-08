@@ -5,8 +5,8 @@
 */
 const entries = [
   {
-    username: 'brandcompatibility',
-    passwordHash: 'b34ec79c6bf23ff0c3550296444433037c8359b2ec9b2cd768eb3ab46744940e',
+    username: 'marketdisruption',
+    passwordHash: 'f7e9daa87cd790dd3529cf73792b36adf9e43cc786502a5e72278b865c001dd0',
     title: 'The Advertising Pitch',
     date: 'Archive 01',
     html: `<p class="small">Before we ever met</p>
