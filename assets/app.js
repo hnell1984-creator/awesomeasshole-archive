@@ -9,7 +9,33 @@ const entries = [
     passwordHash: 'b34ec79c6bf23ff0c3550296444433037c8359b2ec9b2cd768eb3ab46744940e',
     title: 'The Advertising Pitch',
     date: 'Archive 01',
-    html: `<p class="small">Before we ever met</p><p>It started with an advertisement.</p><p class="quote">“I'm intrigued by the ad to your life…”</p><p>And somehow, somewhere between demographics, market share and terrible jokes, we started testing something much more interesting than brand compatibility.</p><p>This is where the story begins.</p>`
+    html: `<p class="small">Before we ever met</p>
+<div class="evidence">
+  <div class="photo-pair">
+    <figure class="photo-card">
+      <img src="assets/the-picture.jpg" alt="The picture of Döhne that Henda liked">
+      <figcaption><strong>The picture</strong>The one I liked.</figcaption>
+    </figure>
+    <figure class="photo-card">
+      <img src="assets/the-advertisement.jpg" alt="Henda dressed for Día de los Muertos">
+      <figcaption><strong>The advertisement</strong>The one you decided was worth investigating.</figcaption>
+    </figure>
+  </div>
+</div>
+<p>It started with a picture I liked.</p>
+<p>Then you noticed my Halloween picture and decided to open negotiations.</p>
+<div class="conversation">
+  <p class="quote">“I'm intrigued by the ad to your life…”</p>
+  <p>Apparently this was no longer just a Hinge conversation. It was a marketing exercise.</p>
+  <p>There were questions about the <span class="punchline">target audience</span>.</p>
+  <p>There were demographics.</p>
+  <p>There was market share.</p>
+  <p>And, somehow, there was a vegetarian fox in a hen house.</p>
+  <p class="quote">“Look at Hinge accidentally creating a market disruption. Maybe we're competing for market share… maybe we're testing brand compatibility.”</p>
+  <p>We hadn't even met yet.</p>
+  <p>But somehow, somewhere between terrible jokes and questionable marketing strategy, we were already making each other laugh.</p>
+  <p class="punchline">And apparently, the brand was compatible.</p>
+</div>`
   }
 ];
 
