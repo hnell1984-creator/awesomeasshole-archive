@@ -31,7 +31,19 @@ const archive = {
 <p>You took that one step further and suggested the possibility of a <strong>brand collaboration</strong>.</p>
 <p>Somewhere in the middle of all this, two strangers on Hinge had managed to create an advertising campaign for a relationship neither of them knew they were applying for.</p>
 <p>And somehow, the application kept progressing.</p>
+
 <div class="evidence"><div class="evidence-label">BEWYSSTUK B1</div><div class="evidence-text">The photograph from my side of the campaign.</div><div class="status"><strong>STATUS:</strong> Evidence suggests graves, powerful outfits and flower hats, may have influenced the decision-making...Wie weet hierdie dinge?</div></div>
+
+<p>Along the way, we discovered we both loved <strong>Patch Adams</strong>.</p>
+<p>You'd watched it a hundred times, and it still made you cry.</p>
+<p>Important discovery: <strong>same favourite part — the gynaecology congress.</strong></p>
+<p>We both knew exactly why that was funny.</p>
+<p><strong>Turns out we were both rather gynaecologically inclined.</strong><br>
+You, a baby lesbian.<br>
+Me, a lifetime gay.</p>
+<p>The campaign was looking very promising.</p>
+
+<p>The conversation eventually moved beyond advertising and into the slightly more useful business of finding out who the other person actually was.</p>
 <p>The conversation eventually moved beyond advertising and into the slightly more useful business of finding out who the other person actually was.</p>
 <p>Work. Weekends. Friends. Family.</p>
 <p>And then padel.</p>
