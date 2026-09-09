@@ -17,7 +17,7 @@ const archive = {
 <p>You replied.</p>
 <p>I remember that first exchange because, very quickly, you turned my profile into an ad.</p>
 <p>You were intrigued by the <em>ad to my life</em> and wanted to know who my target audience was.</p>
-<p>Funny thing is, I didn't know you worked in marketing...yet(Dis soos Crossfit, hoe weet jy?).</p>
+<p>Funny thing is, I didn't know you worked in marketing...yet (Dis soos CrossFit, hoe weet jy?).</p>
 <p>I also knew very little about advertising.</p>
 <p>I had a handful of phrases floating around somewhere in my head — target audience, demographics, market share — and apparently decided that was enough to build an entire campaign.</p>
 <p>Toe werk ek met wat ek het.</p>
@@ -43,7 +43,6 @@ You, a baby lesbian.<br>
 Me, a lifetime gay.</p>
 <p>The campaign was looking very promising.</p>
 
-<p>The conversation eventually moved beyond advertising and into the slightly more useful business of finding out who the other person actually was.</p>
 <p>The conversation eventually moved beyond advertising and into the slightly more useful business of finding out who the other person actually was.</p>
 <p>Work. Weekends. Friends. Family.</p>
 <p>And then padel.</p>
