@@ -12,7 +12,12 @@ const archive = {
 <p>A photograph, a voice, and a name I couldn't quite figure out.</p>
 <p>Apparently, that was enough to get my attention.</p>
 <p>So I liked the picture.</p>
-<div class="evidence"><div class="evidence-label">BEWYSSTUK A1</div><div class="evidence-text">The photograph that started the conversation.</div><div class="status"><strong>STATUS:</strong> Evidence of an apparently consequential like.</div></div>
+<div class="evidence">
+  <div class="evidence-label">BEWYSSTUK A1</div>
+  <img class="evidence-image" src="assets/the-picture.jpg" alt="The photograph that started the conversation.">
+  <div class="evidence-text">The photograph that started the conversation.</div>
+  <div class="status"><strong>STATUS:</strong> Evidence of an apparently consequential like.</div>
+</div>
 <p>I said hello.</p>
 <p>You replied.</p>
 <p>I remember that first exchange because, very quickly, you turned my profile into an ad.</p>
@@ -32,7 +37,12 @@ const archive = {
 <p>Somewhere in the middle of all this, two strangers on Hinge had managed to create an advertising campaign for a relationship neither of them knew they were applying for.</p>
 <p>And somehow, the application kept progressing.</p>
 
-<div class="evidence"><div class="evidence-label">BEWYSSTUK B1</div><div class="evidence-text">The photograph from my side of the campaign.</div><div class="status"><strong>STATUS:</strong> Evidence suggests graves, powerful outfits and flower hats, may have influenced the decision-making...Wie weet hierdie dinge?</div></div>
+<div class="evidence">
+  <div class="evidence-label">BEWYSSTUK B1</div>
+  <img class="evidence-image" src="assets/the-advertisement.jpg" alt="The photograph from my side of the campaign.">
+  <div class="evidence-text">The photograph from my side of the campaign.</div>
+  <div class="status"><strong>STATUS:</strong> Evidence suggests graves, powerful outfits and flower hats, may have influenced the decision-making...Wie weet hierdie dinge?</div>
+</div>
 
 <p>Along the way, we discovered we both loved <strong>Patch Adams</strong>.</p>
 <p>You'd watched it a hundred times, and it still made you cry.</p>
