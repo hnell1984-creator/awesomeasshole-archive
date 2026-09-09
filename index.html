@@ -9,17 +9,47 @@
 <body>
 <main class="shell">
   <section class="card login-card" id="loginView">
-    <div class="mark">AA</div>
-    <p class="eyebrow">AWESOME ASSHOLE</p>
-    <h1>Private Archive</h1>
-    <p class="intro">Access is granted on a need-to-remember basis.</p>
+    <div class="brand-lockup">
+      <img class="brand-mark" src="assets/aa-logo.png" alt="Awesome Asshole AA logo with monkey">
+      <p class="brand-name">AWESOME ASSHOLE</p>
+      <div class="archive-name"><span>PRIVATE ARCHIVE</span></div>
+      <p class="organisation">ON BEHALF OF DÖHNEHEIM &amp; HENDASMERE</p>
+    </div>
+
+    <div class="access-copy">
+      <p class="intro">Access is granted on a need-to-remember basis.</p>
+      <p class="tagline">SOME STORIES ARE WORTH KEEPING.</p>
+    </div>
+
     <form id="loginForm" autocomplete="off">
-      <label>Archive identity<input id="username" name="username" autocomplete="username" placeholder="Today's alias" required></label>
-      <label>Archive password<input id="password" name="password" type="password" autocomplete="current-password" placeholder="Today's password" required></label>
-      <button type="submit">Request access</button>
+      <label>
+        Archive identity
+        <span class="field">
+          <span class="field-icon">♙</span>
+          <input id="username" name="username" autocomplete="username" placeholder="Today's alias" required>
+        </span>
+      </label>
+
+      <label>
+        Archive password
+        <span class="field">
+          <span class="field-icon">♧</span>
+          <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Today's password" required>
+          <button class="show-password" type="button" id="showPassword" aria-label="Show password">◉</button>
+        </span>
+      </label>
+
+      <button class="access-button" type="submit">Request access <span>→</span></button>
       <p class="error" id="error" role="alert" hidden>Those credentials don't appear to open this archive.</p>
     </form>
-    <div class="fine">Döhneheim &amp; Hendasmere · Private Archive Administration</div>
+
+    <div class="footer-brand">
+      <div class="footer-rule"><span>&amp;</span></div>
+      <div class="names">DÖHNEHEIM <span>&amp;</span> HENDASMERE</div>
+      <div class="descriptor">PEOPLE <i>•</i> PLACES <i>•</i> QUESTIONABLE DECISIONS</div>
+    </div>
+
+    <p class="warning">Unauthorized access will be met with disappointment, eyecercises, and other yet to be determined witholding.</p>
   </section>
 
   <section class="card archive-card" id="archiveView" hidden>
@@ -34,5 +64,12 @@
   </section>
 </main>
 <script src="assets/app.js"></script>
+<script>
+document.getElementById('showPassword').addEventListener('click', function () {
+  const input = document.getElementById('password');
+  input.type = input.type === 'password' ? 'text' : 'password';
+  this.textContent = input.type === 'password' ? '◉' : '◌';
+});
+</script>
 </body>
 </html>
