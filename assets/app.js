@@ -26,14 +26,14 @@ const archive = {
 <p>I also knew very little about advertising.</p>
 <p>I had a handful of phrases floating around somewhere in my head — target audience, demographics, market share — and apparently decided that was enough to build an entire campaign.</p>
 <p>Toe werk ek met wat ek het.</p>
-<p>The week had been kind as a vegetarian fox in a hen house.</p>
+<p>The week had been as kind as a vegetarian fox in a henhouse.</p>
 <p>The campaign was looking for someone kind, curious, emotionally mature, and who laughed at terrible jokes.</p>
 <p>Demographics were flexible.</p>
 <p>You laughed.</p>
-<p>You suggested that perhaps we were competing for the same market share.</p>
+<p>You laughed and suggested we might be competing for the same market share.</p>
 <p>I suggested that maybe we weren't competing at all.</p>
 <p>Maybe we were testing <strong>brand compatibility</strong>.</p>
-<p>You took that one step further and suggested the possibility of a <strong>brand collaboration</strong>.</p>
+<p>Ever the overachiever, you went one step further and suggested the possibility of a <strong>brand collaboration</strong>.</p>
 <p>Somewhere in the middle of all this, two strangers on Hinge had managed to create an advertising campaign for a relationship neither of them knew they were applying for.</p>
 <p>And somehow, the application kept progressing.</p>
 
@@ -41,13 +41,12 @@ const archive = {
   <div class="evidence-label">BEWYSSTUK B1</div>
   <img class="evidence-image" src="assets/the-advertisement.jpg" alt="The photograph from my side of the campaign.">
   <div class="evidence-text">The photograph from my side of the campaign.</div>
-  <div class="status"><strong>STATUS:</strong> Evidence suggests graves, powerful outfits and flower hats, may have influenced the decision-making...Wie weet hierdie dinge?</div>
+  <div class="status"><strong>STATUS:</strong> Evidence suggests graves, powerful outfits, and flower hats may have influenced the decision-making...Wie weet hierdie dinge?</div>
 </div>
 
 <p>Along the way, we discovered we both loved <strong>Patch Adams</strong>.</p>
-<p>You'd watched it a hundred times, and it still made you cry.</p>
+<p>You'd watched it a hundred times; it still made you cry.</p>
 <p>Important discovery: <strong>same favourite part — the gynaecology congress.</strong></p>
-<p>We both knew exactly why that was funny.</p>
 <p><strong>Turns out we were both rather gynaecologically inclined.</strong><br>
 You, a baby lesbian.<br>
 Me, a lifetime gay.</p>
