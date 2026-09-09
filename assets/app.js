@@ -5,37 +5,34 @@ const archive = {
   kicker: "BEFORE WE EVER MET",
   body: `<p>It started with a picture.</p>
 <p>I don't remember knowing anything about you yet. I just remember being drawn to you.</p>
-<p>There was the photograph. Clear. Monochrome. Your eyes were bright and seemed to look straight through me, but there was something playful behind them.</p>
+<p>The photograph. Clear. Monochrome. Your eyes were bright and seemed to look straight through me, but there was something playful behind them.</p>
 <p>Then there was your voicenote.</p>
 <p>I remember listening to it and trying to work out how on earth your name was spelled.</p>
 <p><strong>Döhne.</strong></p>
 <p>A photograph, a voice, and a name I couldn't quite figure out.</p>
 <p>Apparently, that was enough to get my attention.</p>
-<p>So I liked the picture.</p>
+<p>So, being brave and all, I liked the picture.</p>
 <div class="evidence">
   <div class="evidence-label">BEWYSSTUK A1</div>
   <img class="evidence-image" src="assets/the-picture.jpg" alt="The photograph that started the conversation.">
   <div class="evidence-text">The photograph that started the conversation.</div>
   <div class="status"><strong>STATUS:</strong> Evidence of an apparently consequential like.</div>
 </div>
-<p>I said hello.</p>
-<p>You replied.</p>
-<p>I remember that first exchange because, very quickly, you turned my profile into an ad.</p>
+<p>I said hello; you replied.</p>
+<p>Very quickly, my profile was turned into an ad.</p>
 <p>You were intrigued by the <em>ad to my life</em> and wanted to know who my target audience was.</p>
 <p>Funny thing is, I didn't know you worked in marketing...yet (Dis soos CrossFit, hoe weet jy?).</p>
-<p>I also knew very little about advertising.</p>
-<p>I had a handful of phrases floating around somewhere in my head — target audience, demographics, market share — and apparently decided that was enough to build an entire campaign.</p>
+<p>I also knew very little about advertising, just a handful of phrases floating around somewhere in my brain.</p>
+<p>Target audience, demographics, market share — I decided that was enough to build an entire campaign.</p>
 <p>Toe werk ek met wat ek het.</p>
 <p>The week had been as kind as a vegetarian fox in a henhouse.</p>
 <p>The campaign was looking for someone kind, curious, emotionally mature, and who laughed at terrible jokes.</p>
 <p>Demographics were flexible.</p>
-<p>You laughed.</p>
 <p>You laughed and suggested we might be competing for the same market share.</p>
-<p>I suggested that maybe we weren't competing at all.</p>
-<p>Maybe we were testing <strong>brand compatibility</strong>.</p>
-<p>Ever the overachiever, you went one step further and suggested the possibility of a <strong>brand collaboration</strong>.</p>
-<p>Somewhere in the middle of all this, two strangers on Hinge had managed to create an advertising campaign for a relationship neither of them knew they were applying for.</p>
-<p>And somehow, the application kept progressing.</p>
+<p>I suggested that maybe we weren't competing at all, simply testing brand compatability</p>
+<p>Ever the overachiever, you went one step further and suggested the possibility of a brand collaboration</p>
+<p>In the middle of all this, two strangers on Hinge had managed to create an advertising campaign for a relationship neither of them knew they were applying for.</p>
+<p>The application kept progressing.</p>
 
 <div class="evidence">
   <div class="evidence-label">BEWYSSTUK B1</div>
@@ -44,21 +41,21 @@ const archive = {
   <div class="status"><strong>STATUS:</strong> Evidence suggests graves, powerful outfits, and flower hats may have influenced the decision-making...Wie weet hierdie dinge?</div>
 </div>
 
-<p>Along the way, we discovered we both loved <strong>Patch Adams</strong>.</p>
+<p>Randomly (as things tend to happen in our world) we discovered we both loved Patch Adams.</p>
 <p>You'd watched it a hundred times; it still made you cry.</p>
-<p>Important discovery: <strong>same favourite part — the gynaecology congress.</strong></p>
+<p>Important discovery: Same favourite part — the gynaecology congress.</p>
 <p><strong>Turns out we were both rather gynaecologically inclined.</strong><br>
 You, a baby lesbian.<br>
 Me, a lifetime gay.</p>
 <p>The campaign was looking very promising.</p>
 
-<p>The conversation eventually moved beyond advertising and into the slightly more useful business of finding out who the other person actually was.</p>
+<p>Conversations moved beyond advertising and into the slightly more useful business of finding out who the other person actually was.</p>
 <p>Work. Weekends. Friends. Family.</p>
 <p>And then padel.</p>
 <p>You suggested we should go play.</p>
 <p>That turned out to be significantly more complicated than simply deciding to play.</p>
-<p>Singles or doubles? Padel or pickleball? Different courts, different venues — suddenly there were a surprising number of variables involved in getting two randos onto a court.</p>
-<p>You presented me with a full menu of possibilities(enter first glimpse of LD).</p>
+<p>Singles or doubles? Padel or pickleball? Different courts, different venues — there were a surprising number of variables involved in getting two randos onto a court.</p>
+<p>A full menu of possibilities (enter first glimpse of LD) was presented.</p>
 <p>Various combinations of padel, pickleball and alternative courts, with the final option being the wonderfully sensible suggestion that we could simply <strong>meet each other for lunch somewhere like normal people.</strong></p>
 <p>I opted for a combination of option 3 and option 5.</p>
 <p>Which, in retrospect, feels about right.</p>
