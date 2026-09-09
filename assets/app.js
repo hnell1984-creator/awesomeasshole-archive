@@ -80,7 +80,6 @@ form.addEventListener("submit", async (e) => {
   const password = document.getElementById("password").value;
   if (username === archive.username && await sha256(password) === archive.passwordHash) {
     document.getElementById("memoryTitle").textContent = archive.title;
-    document.getElementById("memoryKicker").textContent = archive.kicker;
     document.getElementById("memoryBody").innerHTML = archive.body;
     loginView.hidden = true;
     archiveView.hidden = false;
