@@ -76,26 +76,57 @@ async function sha256(value) {
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
+
   const username = document.getElementById("username").value.trim();
   const password = document.getElementById("password").value;
-  if (username === archive.username && await sha256(password) === archive.passwordHash) {
-    document.getElementById("memoryTitle").textContent = archive.title;
-    document.getElementById("memoryBody").innerHTML = archive.body;
-    loginView.hidden = true;
-    archiveView.hidden = false;
-    error.hidden = true;
-  } else {
+
+  try {
+    const enteredHash = await sha256(password);
+
+    if (
+      username === archive.username &&
+      enteredHash === archive.passwordHash
+    ) {
+      document.getElementById("memoryTitle").textContent = archive.title;
+      document.getElementById("memoryBody").innerHTML = archive.body;
+
+      loginView.hidden = true;
+      archiveView.hidden = false;
+      error.hidden = true;
+    } else {
+      error.hidden = false;
+    }
+  } catch (err) {
+    console.error("Archive error:", err);
+    error.textContent = "Archive access encountered an administrative disagreement.";
     error.hidden = false;
   }
 });
 
-document.getElementById("showPassword").addEventListener("click", () => {
+
+document.getElementById("showPassword").addEventListener("click", function (e) {
+  e.preventDefault();
+
   const input = document.getElementById("password");
-  input.type = input.type === "password" ? "text" : "password";
+
+  if (input.type === "password") {
+    input.type = "text";
+    this.textContent = "◌";
+    this.setAttribute("aria-label", "Hide password");
+  } else {
+    input.type = "password";
+    this.textContent = "◉";
+    this.setAttribute("aria-label", "Show password");
+  }
 });
+
 
 document.getElementById("logout").addEventListener("click", () => {
   archiveView.hidden = true;
   loginView.hidden = false;
   form.reset();
+  error.hidden = true;
+
+  document.getElementById("password").type = "password";
+  document.getElementById("showPassword").textContent = "◉";
 });
