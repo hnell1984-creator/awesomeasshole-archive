@@ -166,6 +166,17 @@ input::placeholder{color:#756d7a}
 .memory p{margin:0 0 20px}.memory .quote{font-style:italic;border-left:4px solid var(--orange);padding-left:20px;color:#c5bbc7}
 .memory .small{font:12px Arial,sans-serif;letter-spacing:1px;text-transform:uppercase;color:var(--olive)}
 .evidence{margin:34px 0 42px}
+.evidence-image{
+  display:block;
+  width:auto;
+  max-width:100%;
+  max-height:520px;
+  height:auto;
+  margin:18px auto;
+  border-radius:10px;
+  border:1px solid var(--line);
+  box-shadow:0 10px 30px rgba(0,0,0,.28);
+}
 .photo-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
 .photo-card{margin:0}.photo-card img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,0,0,.28)}
 .photo-card figcaption{margin-top:10px;font:10px/1.45 Arial,sans-serif;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
