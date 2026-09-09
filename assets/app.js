@@ -28,10 +28,10 @@ const archive = {
 <p>The week had been as kind as a vegetarian fox in a henhouse.</p>
 <p>The campaign was looking for someone kind, curious, emotionally mature, and who laughed at terrible jokes.</p>
 <p>Demographics were flexible.</p>
-<p>You laughed and suggested we might be competing for the same market share.</p>
-<p>I suggested that maybe we weren't competing at all, simply testing brand compatability</p>
-<p>Ever the overachiever, you went one step further and suggested the possibility of a brand collaboration</p>
-<p>In the middle of all this, two strangers on Hinge had managed to create an advertising campaign for a relationship neither of them knew they were applying for.</p>
+<p>You laughed and said we might be competing for the same market share.</p>
+<p>I figured maybe we weren't competing at all, simply testing brand compatibility.</p>
+<p>Ever the overachiever, you took it one step further: brand collaboration.</p>
+<p>Two strangers on Hinge had managed to create an advertising campaign for a relationship neither of them knew they were applying for.</p>
 <p>The application kept progressing.</p>
 
 <div class="evidence">
@@ -41,9 +41,9 @@ const archive = {
   <div class="status"><strong>STATUS:</strong> Evidence suggests graves, powerful outfits, and flower hats may have influenced the decision-making...Wie weet hierdie dinge?</div>
 </div>
 
-<p>Randomly (as things tend to happen in our world) we discovered we both loved Patch Adams.</p>
+<p>Randomly (as things tend to happen in our world), we discovered we both loved <strong>Patch Adams</strong>.</p>
 <p>You'd watched it a hundred times; it still made you cry.</p>
-<p>Important discovery: Same favourite part — the gynaecology congress.</p>
+<p>Important discovery: Same favourite part — <strong>the gynaecology congress.</strong></p>
 <p><strong>Turns out we were both rather gynaecologically inclined.</strong><br>
 You, a baby lesbian.<br>
 Me, a lifetime gay.</p>
@@ -53,7 +53,7 @@ Me, a lifetime gay.</p>
 <p>Work. Weekends. Friends. Family.</p>
 <p>And then padel.</p>
 <p>You suggested we should go play.</p>
-<p>That turned out to be significantly more complicated than simply deciding to play.</p>
+<p>It turned out to be significantly more complicated than simply deciding to play.</p>
 <p>Singles or doubles? Padel or pickleball? Different courts, different venues — there were a surprising number of variables involved in getting two randos onto a court.</p>
 <p>A full menu of possibilities (enter first glimpse of LD) was presented.</p>
 <p>Various combinations of padel, pickleball and alternative courts, with the final option being the wonderfully sensible suggestion that we could simply <strong>meet each other for lunch somewhere like normal people.</strong></p>
