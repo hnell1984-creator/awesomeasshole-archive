@@ -2,6 +2,10 @@ const archives = {
   marketdisruption: {
     passwordHash: "f7e9daa87cd790dd3529cf73792b36adf9e43cc786502a5e72278b865c001dd0",
     path: "archives/01/"
+  },
+  passingasshole: {
+    passwordHash: "209d28caac2071caaa2ba4de33d5c11fcf97a721dc0ef2e420d588e641963bf1",
+    path: "archives/02/"
   }
 };
 
