@@ -37,29 +37,11 @@
         A catalogue of stories worth keeping.
       </p>
 
-      <div class="archive-list">
+      <div class="archive-list" id="archiveList">
 
-        <a class="archive-entry" href="01/">
-
-          <div class="archive-number">
-            01
-          </div>
-
-          <div class="archive-details">
-            <div class="archive-title">
-              THE ADVERTISING PITCH
-            </div>
-
-            <div class="archive-kicker">
-              BEFORE WE EVER MET
-            </div>
-          </div>
-
-          <div class="archive-status">
-            <span>●</span> FROZEN
-          </div>
-
-        </a>
+        <p class="archive-loading">
+          Retrieving archive records...
+        </p>
 
       </div>
 
@@ -72,6 +54,138 @@
   </section>
 
 </main>
+
+<script>
+const REPOSITORY =
+  "https://api.github.com/repos/hnell1984-creator/awesomeasshole-archive";
+
+const BRANCH = "main";
+
+const archiveList = document.getElementById("archiveList");
+
+async function loadArchives() {
+
+  try {
+
+    /*
+     * Get every folder inside /archives
+     */
+    const response = await fetch(
+      `${REPOSITORY}/contents/archives?ref=${BRANCH}`
+    );
+
+    if (!response.ok) {
+      throw new Error("Unable to retrieve archive directory.");
+    }
+
+    const entries = await response.json();
+
+    /*
+     * Keep only numbered archive folders.
+     */
+    const archiveFolders = entries
+      .filter(entry =>
+        entry.type === "dir" &&
+        /^\d+$/.test(entry.name)
+      )
+      .sort((a, b) =>
+        Number(a.name) - Number(b.name)
+      );
+
+    archiveList.innerHTML = "";
+
+    /*
+     * Read the metadata belonging to each archive.
+     */
+    for (const folder of archiveFolders) {
+
+      try {
+
+        const metadataResponse = await fetch(
+          `${REPOSITORY}/contents/archives/${folder.name}/archive.json?ref=${BRANCH}`
+        );
+
+        if (!metadataResponse.ok) {
+          console.warn(
+            `Metadata missing for Archive ${folder.name}`
+          );
+          continue;
+        }
+
+        const metadataFile = await metadataResponse.json();
+
+        const metadata = JSON.parse(
+          atob(metadataFile.content.replace(/\n/g, ""))
+        );
+
+        /*
+         * Build the archive entry.
+         */
+        const link = document.createElement("a");
+
+        link.className = "archive-entry";
+        link.href = `${folder.name}/`;
+
+        link.innerHTML = `
+          <div class="archive-number">
+            ${metadata.number}
+          </div>
+
+          <div class="archive-details">
+            <div class="archive-title">
+              ${metadata.title}
+            </div>
+
+            <div class="archive-kicker">
+              ${metadata.kicker}
+            </div>
+          </div>
+
+          <div class="archive-status">
+            <span>●</span> ${metadata.status}
+          </div>
+        `;
+
+        archiveList.appendChild(link);
+
+      } catch (error) {
+
+        console.warn(
+          `Could not load Archive ${folder.name}`,
+          error
+        );
+
+      }
+    }
+
+    /*
+     * No archives found.
+     */
+    if (!archiveList.children.length) {
+
+      archiveList.innerHTML = `
+        <p class="archive-loading">
+          No archive records currently available.
+        </p>
+      `;
+
+    }
+
+  } catch (error) {
+
+    console.error("Archive directory error:", error);
+
+    archiveList.innerHTML = `
+      <p class="archive-loading">
+        Archive records are temporarily unavailable.
+      </p>
+    `;
+
+  }
+}
+
+loadArchives();
+</script>
 
 </body>
 </html>
