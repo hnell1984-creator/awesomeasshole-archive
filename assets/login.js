@@ -5,7 +5,11 @@ const archives = {
   }
 };
 
-const MASTER_PASSWORD_HASH = "";
+const master = {
+  username: "AssholeAdministrator180726",
+  passwordHash: "5e5c4d7370c93efc724f6b46f026f06c2e0e0566bdfc0b7474184cdf46fe2e79",
+  path: "archives/"
+};
 
 const form = document.getElementById("loginForm");
 const error = document.getElementById("error");
@@ -41,15 +45,13 @@ form.addEventListener("submit", async (e) => {
     }
 
     /*
-     * MASTER ADMIN ACCESS
-     *
-     * This will be populated once we decide
-     * exactly how the master archive directory
-     * should work.
+     * MASTER ADMINISTRATOR ACCESS
      */
-
-    if (MASTER_PASSWORD_HASH && enteredHash === MASTER_PASSWORD_HASH) {
-      window.location.href = "archives/";
+    if (
+      username === master.username &&
+      enteredHash === master.passwordHash
+    ) {
+      window.location.href = master.path;
       return;
     }
 
