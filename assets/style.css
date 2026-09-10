@@ -159,7 +159,32 @@ input::placeholder{color:#756d7a}
 .archive-header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
 .eyebrow{font:700 12px/1.2 Arial,sans-serif;letter-spacing:2.5px;color:var(--olive);margin:0 0 12px}
 .archive-header h1{color:var(--purple-bright);margin:0;font-size:clamp(28px,5vw,42px)}
-.quiet{width:auto;background:transparent;color:#c29bd0;border:1px solid var(--line);margin:0}
+.quiet{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:auto;
+  min-height:42px;
+  padding:0 16px;
+  margin:0;
+  background:rgba(125,53,160,.05);
+  color:#c29bd0;
+  border:1px solid var(--line);
+  border-radius:8px;
+  font:700 10px/1 Arial,sans-serif;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  text-decoration:none;
+  white-space:nowrap;
+  transition:border-color .15s, background .15s, color .15s;
+}
+
+.quiet:hover{
+  background:rgba(125,53,160,.12);
+  border-color:#685570;
+  color:#d9b6e4;
+  text-decoration:none;
+}
 .rule{height:3px;background:linear-gradient(90deg,var(--purple),var(--orange),var(--olive));margin:25px 0}
 .date{font:700 11px Arial,sans-serif;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
 .memory{font-size:20px;line-height:1.75;margin:28px 0 55px}
