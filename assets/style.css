@@ -319,3 +319,12 @@ footer{text-align:center;font:700 10px Arial,sans-serif;letter-spacing:2px;color
   letter-spacing:1.5px;
   text-transform:uppercase;
 }
+
+/* Archive hyperlink styling */
+.archive-link {
+  color: #7FB3D5;
+}
+
+.archive-link:hover {
+  color: #A8D4F0;
+}
