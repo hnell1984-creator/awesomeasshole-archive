@@ -324,3 +324,11 @@ footer{text-align:center;font:700 10px Arial,sans-serif;letter-spacing:2px;color
 .archive-link {
   color: #7FB3D5;
 }
+/* Interlude directory label */
+.interlude-number{
+  font-size:11px;
+  line-height:1.25;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  text-align:center;
+}
