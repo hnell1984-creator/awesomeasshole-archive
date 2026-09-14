@@ -321,8 +321,14 @@ footer{text-align:center;font:700 10px Arial,sans-serif;letter-spacing:2px;color
 }
 
 /* Archive hyperlink styling */
-.archive-link {
+.archive-link,
+.archive-link:visited {
   color: #7FB3D5;
+}
+
+.archive-link:hover,
+.archive-link:focus {
+  color: #A8D4F0;
 }
 /* Interlude directory label */
 .interlude-number{
