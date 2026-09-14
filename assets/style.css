@@ -328,3 +328,11 @@ footer{text-align:center;font:700 10px Arial,sans-serif;letter-spacing:2px;color
 .archive-link:hover {
   color: #A8D4F0;
 }
+/* Archive directory links */
+.archive-entry .archive-title {
+  color: #7FB3D5;
+}
+
+.archive-entry:hover .archive-title {
+  color: #A8D4F0;
+}
