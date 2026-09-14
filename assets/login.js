@@ -8,7 +8,7 @@ const archives = {
     path: "archives/02/"
   },
   betweenbeats: {
-    passwordHash: "4facde0edd6977e42184e7fc694941b921c02e8d4f0fb9e59ef4ea447c08b59c",
+    passwordHash: "2b9738128cccb5c735379fcb51c7a27e1860c76bbea5bfac854a4877d7c11940",
     path: "archives/interlude-01/"
   }
 };
