@@ -81,16 +81,38 @@ async function loadArchives() {
     const entries = await response.json();
 
     /*
-     * Keep only numbered archive folders.
+     * Keep numbered archives and numbered interludes.
+     *
+     * Examples:
+     * 01
+     * 02
+     * interlude-01
+     * interlude-02
      */
     const archiveFolders = entries
       .filter(entry =>
         entry.type === "dir" &&
-        /^\d+$/.test(entry.name)
+        (
+          /^\d+$/.test(entry.name) ||
+          /^interlude-\d+$/.test(entry.name)
+        )
       )
-      .sort((a, b) =>
-        Number(a.name) - Number(b.name)
-      );
+      .sort((a, b) => {
+
+        const getSortValue = (name) => {
+
+          if (/^\d+$/.test(name)) {
+            return Number(name);
+          }
+
+          const interludeNumber =
+            Number(name.replace("interlude-", ""));
+
+          return interludeNumber + 0.5;
+        };
+
+        return getSortValue(a.name) - getSortValue(b.name);
+      });
 
     archiveList.innerHTML = "";
 
@@ -107,7 +129,7 @@ async function loadArchives() {
 
         if (!metadataResponse.ok) {
           console.warn(
-            `Metadata missing for Archive ${folder.name}`
+            `Metadata missing for ${folder.name}`
           );
           continue;
         }
@@ -151,7 +173,7 @@ async function loadArchives() {
       } catch (error) {
 
         console.warn(
-          `Could not load Archive ${folder.name}`,
+          `Could not load ${folder.name}`,
           error
         );
 
