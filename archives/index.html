@@ -160,8 +160,13 @@ async function loadArchives() {
       link.className = "archive-entry";
       link.href = `${folder}/`;
 
+      const numberClass =
+        /^interlude-\d+$/.test(folder)
+          ? "archive-number interlude-number"
+          : "archive-number";
+
       link.innerHTML = `
-        <div class="archive-number">
+        <div class="${numberClass}">
           ${metadata.number}
         </div>
 
