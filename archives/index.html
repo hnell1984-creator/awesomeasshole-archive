@@ -89,36 +89,19 @@ async function loadArchives() {
      * interlude-01
      * interlude-02
      */
-    const archiveFolders = entries
-      .filter(entry =>
-        entry.type === "dir" &&
-        (
-          /^\d+$/.test(entry.name) ||
-          /^interlude-\d+$/.test(entry.name)
-        )
+    const archiveFolders = entries.filter(entry =>
+      entry.type === "dir" &&
+      (
+        /^\d+$/.test(entry.name) ||
+        /^interlude-\d+$/.test(entry.name)
       )
-      .sort((a, b) => {
-
-        const getSortValue = (name) => {
-
-          if (/^\d+$/.test(name)) {
-            return Number(name);
-          }
-
-          const interludeNumber =
-            Number(name.replace("interlude-", ""));
-
-          return interludeNumber + 0.5;
-        };
-
-        return getSortValue(a.name) - getSortValue(b.name);
-      });
-
-    archiveList.innerHTML = "";
+    );
 
     /*
      * Read the metadata belonging to each archive.
      */
+    const archiveRecords = [];
+
     for (const folder of archiveFolders) {
 
       try {
@@ -140,35 +123,10 @@ async function loadArchives() {
           atob(metadataFile.content.replace(/\n/g, ""))
         );
 
-        /*
-         * Build the archive entry.
-         */
-        const link = document.createElement("a");
-
-        link.className = "archive-entry";
-        link.href = `${folder.name}/`;
-
-        link.innerHTML = `
-          <div class="archive-number">
-            ${metadata.number}
-          </div>
-
-          <div class="archive-details">
-            <div class="archive-title">
-              ${metadata.title}
-            </div>
-
-            <div class="archive-kicker">
-              ${metadata.kicker}
-            </div>
-          </div>
-
-          <div class="archive-status">
-            <span>●</span> ${metadata.status}
-          </div>
-        `;
-
-        archiveList.appendChild(link);
+        archiveRecords.push({
+          folder: folder.name,
+          metadata: metadata
+        });
 
       } catch (error) {
 
@@ -178,6 +136,51 @@ async function loadArchives() {
         );
 
       }
+    }
+
+    /*
+     * Sort by the explicit archive chronology.
+     */
+    archiveRecords.sort((a, b) =>
+      Number(a.metadata.sort) - Number(b.metadata.sort)
+    );
+
+    archiveList.innerHTML = "";
+
+    /*
+     * Build the archive entries.
+     */
+    for (const record of archiveRecords) {
+
+      const folder = record.folder;
+      const metadata = record.metadata;
+
+      const link = document.createElement("a");
+
+      link.className = "archive-entry";
+      link.href = `${folder}/`;
+
+      link.innerHTML = `
+        <div class="archive-number">
+          ${metadata.number}
+        </div>
+
+        <div class="archive-details">
+          <div class="archive-title">
+            ${metadata.title}
+          </div>
+
+          <div class="archive-kicker">
+            ${metadata.kicker}
+          </div>
+        </div>
+
+        <div class="archive-status">
+          <span>●</span> ${metadata.status}
+        </div>
+      `;
+
+      archiveList.appendChild(link);
     }
 
     /*
