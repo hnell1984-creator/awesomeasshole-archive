@@ -6,6 +6,10 @@ const archives = {
   passingasshole: {
     passwordHash: "209d28caac2071caaa2ba4de33d5c11fcf97a721dc0ef2e420d588e641963bf1",
     path: "archives/02/"
+  },
+  betweenbeats: {
+    passwordHash: "4facde0edd6977e42184e7fc694941b921c02e8d4f0fb9e59ef4ea447c08b59c",
+    path: "archives/interlude-01/"
   }
 };
 
