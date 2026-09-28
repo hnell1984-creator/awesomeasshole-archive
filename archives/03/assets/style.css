@@ -47,7 +47,7 @@ body {
 .story-header h1 {
   margin: 0;
   color: var(--ink);
-  font: 400 clamp(44px, 9vw, 82px)/.9 Arial, sans-serif;
+  font: 400 clamp(44px, 9vw, 82px)/.9 "Times New Roman", Times, serif;
   letter-spacing: -4px;
   text-transform: uppercase;
 }
