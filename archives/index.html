@@ -56,108 +56,63 @@
 </main>
 
 <script>
-const REPOSITORY =
-  "https://api.github.com/repos/hnell1984-creator/awesomeasshole-archive";
-
-const BRANCH = "main";
 const archiveList = document.getElementById("archiveList");
 
-async function loadArchives() {
-  try {
-    const response = await fetch(
-      `${REPOSITORY}/contents/archives?ref=${BRANCH}`
-    );
-
-    if (!response.ok) {
-      throw new Error("Unable to retrieve archive directory.");
-    }
-
-    const entries = await response.json();
-
-    const archiveFolders = entries.filter(entry =>
-      entry.type === "dir" &&
-      (/^\d+$/.test(entry.name) || /^interlude-\d+$/.test(entry.name))
-    );
-
-    const archiveRecords = [];
-
-    for (const folder of archiveFolders) {
-      try {
-        const metadataResponse = await fetch(
-          `${REPOSITORY}/contents/archives/${folder.name}/archive.json?ref=${BRANCH}`
-        );
-
-        if (!metadataResponse.ok) {
-          console.warn(`Metadata missing for ${folder.name}`);
-          continue;
-        }
-
-        const metadataFile = await metadataResponse.json();
-        const metadata = JSON.parse(
-          atob(metadataFile.content.replace(/\n/g, ""))
-        );
-
-        archiveRecords.push({
-          folder: folder.name,
-          metadata: metadata
-        });
-      } catch (error) {
-        console.warn(`Could not load ${folder.name}`, error);
-      }
-    }
-
-    archiveRecords.sort((a, b) =>
-      Number(a.metadata.sort) - Number(b.metadata.sort)
-    );
-
-    archiveList.innerHTML = "";
-
-    for (const record of archiveRecords) {
-      const folder = record.folder;
-      const metadata = record.metadata;
-      const link = document.createElement("a");
-
-      link.className = "archive-entry";
-      link.href = `./${folder}/`;
-
-      const numberClass = /^interlude-\d+$/.test(folder)
-        ? "archive-number interlude-number"
-        : "archive-number";
-
-      link.innerHTML = `
-        <div class="${numberClass}">${metadata.number}</div>
-        <div class="archive-details">
-          <div class="archive-title">${metadata.title}</div>
-          <div class="archive-kicker">${metadata.kicker}</div>
-        </div>
-        <div class="archive-status">
-          <span>●</span> ${metadata.status}
-        </div>
-      `;
-
-      archiveList.appendChild(link);
-    }
-
-    if (!archiveList.children.length) {
-      archiveList.innerHTML = `
-        <p class="archive-loading">
-          No archive records currently available.
-        </p>
-      `;
-    }
-  } catch (error) {
-    console.error("Archive directory error:", error);
-
-    archiveList.innerHTML = `
-      <p class="archive-loading">
-        Archive records are temporarily unavailable.
-      </p>
-    `;
+const records = [
+  {
+    folder: "01",
+    number: "01",
+    title: "THE ADVERTISING PITCH",
+    kicker: "BEFORE WE EVER MET",
+    status: "FROZEN"
+  },
+  {
+    folder: "02",
+    number: "02",
+    title: "THE BIRTHPLACE OF ASSHOLE",
+    kicker: "11 JULY 2026",
+    status: "OPEN"
+  },
+  {
+    folder: "interlude-01",
+    number: "INTERLUDE 01",
+    title: "TWO MONKEYS",
+    kicker: "BETWEEN THE BEATS",
+    status: "OPEN"
+  },
+  {
+    folder: "03",
+    number: "03",
+    title: "WHEN THE TROUBLE STARTED",
+    kicker: "BIETJIE BANG. BIETJIE STOUT.",
+    status: "OPEN"
   }
+];
+
+archiveList.innerHTML = "";
+
+for (const record of records) {
+  const link = document.createElement("a");
+  link.className = "archive-entry";
+  link.href = `./${record.folder}/`;
+
+  const numberClass = record.folder.startsWith("interlude-")
+    ? "archive-number interlude-number"
+    : "archive-number";
+
+  link.innerHTML = `
+    <div class="${numberClass}">${record.number}</div>
+    <div class="archive-details">
+      <div class="archive-title">${record.title}</div>
+      <div class="archive-kicker">${record.kicker}</div>
+    </div>
+    <div class="archive-status">
+      <span>●</span> ${record.status}
+    </div>
+  `;
+
+  archiveList.appendChild(link);
 }
-
-loadArchives();
 </script>
-
 </body>
 </html>
