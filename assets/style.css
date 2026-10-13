@@ -422,5 +422,9 @@ footer{text-align:center;font:700 10px Arial,sans-serif;letter-spacing:2px;color
 .archive-story .audio-meta {
   margin-bottom: 18px;
 }
+/* Archive 03 — Excel green */
+.excel-green {
+  color: #217346;
+}
 
 .archive-story .audio
