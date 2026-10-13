@@ -60,18 +60,12 @@ const REPOSITORY =
   "https://api.github.com/repos/hnell1984-creator/awesomeasshole-archive";
 
 const BRANCH = "main";
-
 const archiveList = document.getElementById("archiveList");
 
 async function loadArchives() {
-
   try {
-
-    /*
-     * Get every folder inside /archives
-     */
     const response = await fetch(
-      ${REPOSITORY}/contents/archives?ref=${BRANCH}
+      `${REPOSITORY}/contents/archives?ref=${BRANCH}`
     );
 
     if (!response.ok) {
@@ -80,45 +74,25 @@ async function loadArchives() {
 
     const entries = await response.json();
 
-    /*
-     * Keep numbered archives and numbered interludes.
-     *
-     * Examples:
-     * 01
-     * 02
-     * interlude-01
-     * interlude-02
-     */
     const archiveFolders = entries.filter(entry =>
       entry.type === "dir" &&
-      (
-        /^\d+$/.test(entry.name) ||
-        /^interlude-\d+$/.test(entry.name)
-      )
+      (/^\d+$/.test(entry.name) || /^interlude-\d+$/.test(entry.name))
     );
 
-    /*
-     * Read the metadata belonging to each archive.
-     */
     const archiveRecords = [];
 
     for (const folder of archiveFolders) {
-
       try {
-
         const metadataResponse = await fetch(
-          ${REPOSITORY}/contents/archives/${folder.name}/archive.json?ref=${BRANCH}
+          `${REPOSITORY}/contents/archives/${folder.name}/archive.json?ref=${BRANCH}`
         );
 
         if (!metadataResponse.ok) {
-          console.warn(
-            Metadata missing for ${folder.name}
-          );
+          console.warn(`Metadata missing for ${folder.name}`);
           continue;
         }
 
         const metadataFile = await metadataResponse.json();
-
         const metadata = JSON.parse(
           atob(metadataFile.content.replace(/\n/g, ""))
         );
@@ -127,59 +101,35 @@ async function loadArchives() {
           folder: folder.name,
           metadata: metadata
         });
-
       } catch (error) {
-
-        console.warn(
-          Could not load ${folder.name},
-          error
-        );
-
+        console.warn(`Could not load ${folder.name}`, error);
       }
     }
 
-    /*
-     * Sort by the explicit archive chronology.
-     */
     archiveRecords.sort((a, b) =>
       Number(a.metadata.sort) - Number(b.metadata.sort)
     );
 
     archiveList.innerHTML = "";
 
-    /*
-     * Build the archive entries.
-     */
     for (const record of archiveRecords) {
-
       const folder = record.folder;
       const metadata = record.metadata;
-
       const link = document.createElement("a");
 
       link.className = "archive-entry";
-      link.href = ${folder}/;
+      link.href = `./${folder}/`;
 
-      const numberClass =
-        /^interlude-\d+$/.test(folder)
-          ? "archive-number interlude-number"
-          : "archive-number";
+      const numberClass = /^interlude-\d+$/.test(folder)
+        ? "archive-number interlude-number"
+        : "archive-number";
 
       link.innerHTML = `
-        <div class="${numberClass}">
-          ${metadata.number}
-        </div>
-
+        <div class="${numberClass}">${metadata.number}</div>
         <div class="archive-details">
-          <div class="archive-title">
-            ${metadata.title}
-          </div>
-
-          <div class="archive-kicker">
-            ${metadata.kicker}
-          </div>
+          <div class="archive-title">${metadata.title}</div>
+          <div class="archive-kicker">${metadata.kicker}</div>
         </div>
-
         <div class="archive-status">
           <span>●</span> ${metadata.status}
         </div>
@@ -188,21 +138,14 @@ async function loadArchives() {
       archiveList.appendChild(link);
     }
 
-    /*
-     * No archives found.
-     */
     if (!archiveList.children.length) {
-
       archiveList.innerHTML = `
         <p class="archive-loading">
           No archive records currently available.
         </p>
       `;
-
     }
-
   } catch (error) {
-
     console.error("Archive directory error:", error);
 
     archiveList.innerHTML = `
@@ -210,7 +153,6 @@ async function loadArchives() {
         Archive records are temporarily unavailable.
       </p>
     `;
-
   }
 }
 
