@@ -1,221 +1,56 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Awesome Asshole — Archive Directory</title>
-
-<link rel="icon" type="image/png" href="../assets/favicon.png">
-<link rel="stylesheet" href="../assets/style.css">
-</head>
-
-<body>
-
-<main class="shell">
-
-  <section class="card archive-card">
-
-    <header class="archive-header">
-      <div>
-        <p class="eyebrow">AWESOME ASSHOLE / PRIVATE ARCHIVE</p>
-        <h1>ARCHIVE DIRECTORY</h1>
-      </div>
-
-      <a class="quiet" href="../">← FRONT DOOR</a>
-    </header>
-
-    <div class="rule"></div>
-
-    <article class="memory">
-
-      <p class="intro">
-        DÖHNEHEIM &amp; HENDASMERE
-      </p>
-
-      <p class="tagline">
-        A catalogue of stories worth keeping.
-      </p>
-
-      <div class="archive-list" id="archiveList">
-
-        <p class="archive-loading">
-          Retrieving archive records...
-        </p>
-
-      </div>
-
-    </article>
-
-    <footer>
-      SOME STORIES ARE WORTH KEEPING.
-    </footer>
-
-  </section>
-
-</main>
 
 <script>
-const REPOSITORY =
-  "https://api.github.com/repos/hnell1984-creator/awesomeasshole-archive";
-
-const BRANCH = "main";
-
 const archiveList = document.getElementById("archiveList");
 
 async function loadArchives() {
-
   try {
-
-    /*
-     * Get every folder inside /archives
-     */
-    const response = await fetch(
-      `${REPOSITORY}/contents/archives?ref=${BRANCH}`
-    );
+    const response = await fetch("../archives.json", {
+      cache: "no-store"
+    });
 
     if (!response.ok) {
-      throw new Error("Unable to retrieve archive directory.");
+      throw new Error("Unable to load archives.json");
     }
 
-    const entries = await response.json();
-
-    /*
-     * Keep numbered archives and numbered interludes.
-     *
-     * Examples:
-     * 01
-     * 02
-     * interlude-01
-     * interlude-02
-     */
-    const archiveFolders = entries.filter(entry =>
-      entry.type === "dir" &&
-      (
-        /^\d+$/.test(entry.name) ||
-        /^interlude-\d+$/.test(entry.name)
-      )
-    );
-
-    /*
-     * Read the metadata belonging to each archive.
-     */
-    const archiveRecords = [];
-
-    for (const folder of archiveFolders) {
-
-      try {
-
-        const metadataResponse = await fetch(
-          `${REPOSITORY}/contents/archives/${folder.name}/archive.json?ref=${BRANCH}`
-        );
-
-        if (!metadataResponse.ok) {
-          console.warn(
-            `Metadata missing for ${folder.name}`
-          );
-          continue;
-        }
-
-        const metadataFile = await metadataResponse.json();
-
-        const metadata = JSON.parse(
-          atob(metadataFile.content.replace(/\n/g, ""))
-        );
-
-        archiveRecords.push({
-          folder: folder.name,
-          metadata: metadata
-        });
-
-      } catch (error) {
-
-        console.warn(
-          `Could not load ${folder.name}`,
-          error
-        );
-
-      }
-    }
-
-    /*
-     * Sort by the explicit archive chronology.
-     */
-    archiveRecords.sort((a, b) =>
-      Number(a.metadata.sort) - Number(b.metadata.sort)
-    );
-
+    const records = await response.json();
+    records.sort((a, b) => Number(a.sort) - Number(b.sort));
     archiveList.innerHTML = "";
 
-    /*
-     * Build the archive entries.
-     */
-    for (const record of archiveRecords) {
-
-      const folder = record.folder;
-      const metadata = record.metadata;
-
+    for (const record of records) {
       const link = document.createElement("a");
-
       link.className = "archive-entry";
-      link.href = `${folder}/`;
+      link.href = `./${record.folder}/`;
 
-      const numberClass =
-        /^interlude-\d+$/.test(folder)
-          ? "archive-number interlude-number"
-          : "archive-number";
+      const numberClass = record.folder.startsWith("interlude-")
+        ? "archive-number interlude-number"
+        : "archive-number";
 
       link.innerHTML = `
-        <div class="${numberClass}">
-          ${metadata.number}
-        </div>
-
+        <div class="${numberClass}">${record.number}</div>
         <div class="archive-details">
-          <div class="archive-title">
-            ${metadata.title}
-          </div>
-
-          <div class="archive-kicker">
-            ${metadata.kicker}
-          </div>
+          <div class="archive-title">${record.title}</div>
+          <div class="archive-kicker">${record.kicker}</div>
         </div>
-
         <div class="archive-status">
-          <span>●</span> ${metadata.status}
+          <span>●</span> ${record.status}
         </div>
       `;
 
       archiveList.appendChild(link);
     }
 
-    /*
-     * No archives found.
-     */
-    if (!archiveList.children.length) {
-
+    if (!records.length) {
       archiveList.innerHTML = `
-        <p class="archive-loading">
-          No archive records currently available.
-        </p>
+        <p class="archive-loading">No archive records currently available.</p>
       `;
-
     }
-
   } catch (error) {
-
     console.error("Archive directory error:", error);
-
     archiveList.innerHTML = `
-      <p class="archive-loading">
-        Archive records are temporarily unavailable.
-      </p>
+      <p class="archive-loading">Archive records are temporarily unavailable.</p>
     `;
-
   }
 }
 
 loadArchives();
 </script>
-
-</body>
-</html>
