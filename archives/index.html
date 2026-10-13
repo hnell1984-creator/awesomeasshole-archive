@@ -1,56 +1,66 @@
-
+```html
 <script>
 const archiveList = document.getElementById("archiveList");
 
-async function loadArchives() {
-  try {
-    const response = await fetch("../archives.json", {
-      cache: "no-store"
-    });
-
-    if (!response.ok) {
-      throw new Error("Unable to load archives.json");
-    }
-
-    const records = await response.json();
-    records.sort((a, b) => Number(a.sort) - Number(b.sort));
-    archiveList.innerHTML = "";
-
-    for (const record of records) {
-      const link = document.createElement("a");
-      link.className = "archive-entry";
-      link.href = `./${record.folder}/`;
-
-      const numberClass = record.folder.startsWith("interlude-")
-        ? "archive-number interlude-number"
-        : "archive-number";
-
-      link.innerHTML = `
-        <div class="${numberClass}">${record.number}</div>
-        <div class="archive-details">
-          <div class="archive-title">${record.title}</div>
-          <div class="archive-kicker">${record.kicker}</div>
-        </div>
-        <div class="archive-status">
-          <span>●</span> ${record.status}
-        </div>
-      `;
-
-      archiveList.appendChild(link);
-    }
-
-    if (!records.length) {
-      archiveList.innerHTML = `
-        <p class="archive-loading">No archive records currently available.</p>
-      `;
-    }
-  } catch (error) {
-    console.error("Archive directory error:", error);
-    archiveList.innerHTML = `
-      <p class="archive-loading">Archive records are temporarily unavailable.</p>
-    `;
+const records = [
+  {
+    folder: "01",
+    number: "01",
+    title: "THE ADVERTISING PITCH",
+    kicker: "BEFORE WE EVER MET",
+    status: "FROZEN",
+    sort: 1
+  },
+  {
+    folder: "02",
+    number: "02",
+    title: "THE BIRTHPLACE OF ASSHOLE",
+    kicker: "11 JULY 2026",
+    status: "OPEN",
+    sort: 2
+  },
+  {
+    folder: "interlude-01",
+    number: "INTERLUDE 01",
+    title: "TWO MONKEYS",
+    kicker: "BETWEEN THE BEATS",
+    status: "OPEN",
+    sort: 2.5
+  },
+  {
+    folder: "03",
+    number: "03",
+    title: "WHEN THE TROUBLE STARTED",
+    kicker: "BIETJIE BANG. BIETJIE STOUT.",
+    status: "OPEN",
+    sort: 3
   }
-}
+];
 
-loadArchives();
+records.sort((a, b) => a.sort - b.sort);
+archiveList.innerHTML = "";
+
+for (const record of records) {
+  const link = document.createElement("a");
+  link.className = "archive-entry";
+  link.href = `./${record.folder}/`;
+
+  const numberClass = record.folder.startsWith("interlude-")
+    ? "archive-number interlude-number"
+    : "archive-number";
+
+  link.innerHTML = `
+    <div class="${numberClass}">${record.number}</div>
+    <div class="archive-details">
+      <div class="archive-title">${record.title}</div>
+      <div class="archive-kicker">${record.kicker}</div>
+    </div>
+    <div class="archive-status">
+      <span>●</span> ${record.status}
+    </div>
+  `;
+
+  archiveList.appendChild(link);
+}
 </script>
+```
