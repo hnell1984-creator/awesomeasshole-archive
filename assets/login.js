@@ -10,6 +10,10 @@ const archives = {
   betweenbeats: {
     passwordHash: "2b9738128cccb5c735379fcb51c7a27e1860c76bbea5bfac854a4877d7c11940",
     path: "archives/interlude-01/"
+  },
+    BietjieAltyd: {
+    passwordHash: "e8718479c2d700427d62e4627dfa6f2ad2f612a6c5ace3dc7010e5a58eaf54f5",
+    path: "archives/03/"
   }
 };
 
