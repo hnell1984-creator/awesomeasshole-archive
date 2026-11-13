@@ -1,149 +1,294 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Awesome Asshole — The Advertising Pitch</title>
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="stylesheet" href="assets/style.css">
+<meta name="theme-color" content="#0d0b10">
+<title>Storrie &amp; Magic Monkey — Van Mur tot Huis</title>
+<style>
+:root{--bg:#0d0b10;--bg2:#131018;--purple:#7d35a0;--purple-bright:#b98bc9;--olive:#9bab62;--orange:#d99058;--white:#f5f1f6;--muted:#a49aa8;--line:#3a3040}
+*{box-sizing:border-box}
+html{min-height:100%;background:var(--bg);scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:var(--white);background:radial-gradient(circle at 50% 5%,rgba(125,53,160,.15),transparent 34%),radial-gradient(circle at 50% 100%,rgba(138,157,72,.07),transparent 35%),linear-gradient(145deg,var(--bg),var(--bg2));font-family:Georgia,"Times New Roman",serif}
+a{color:var(--olive);text-decoration:none}
+a:hover{color:var(--purple-bright);text-decoration:underline}
+.shell{width:min(900px,92vw);margin:0 auto;padding:32px 0 70px}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:0 4px 18px;border-bottom:1px solid var(--line);color:var(--muted);font:700 9px/1.4 Arial,sans-serif;letter-spacing:2px;text-transform:uppercase}
+.card{margin-top:22px;padding:clamp(28px,6vw,64px);background:rgba(17,16,23,.88);border:1px solid #332b39;box-shadow:0 28px 90px rgba(0,0,0,.42);border-radius:16px}
+.story-header{padding:4px 0 34px;border-bottom:1px solid var(--line);margin-bottom:34px}
+.kicker{margin:0 0 18px;color:var(--olive);font:700 10px/1.5 Arial,sans-serif;letter-spacing:2.5px;text-transform:uppercase}
+h1{margin:0;color:var(--purple-bright);font:700 clamp(34px,7vw,62px)/1.04 "Times New Roman",serif;letter-spacing:-1.5px}
+.subtitle{margin:18px 0 0;color:#c6bbc9;font-size:20px;font-style:italic}
+.tagline{max-width:620px;margin:18px 0 0;color:var(--muted);font-size:15px;line-height:1.65;font-style:italic}
+.meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:25px;color:var(--muted);font:10px/1.5 Arial,sans-serif;letter-spacing:1.4px;text-transform:uppercase}
+.meta span:before{content:"— ";color:var(--orange)}
+.story-body{max-width:720px;margin:0 auto;font-size:18px;line-height:1.82}
+.story-body p{margin:0 0 1.35em}
+.story-body h2{margin:2.7em 0 1em;padding-top:20px;border-top:1px solid var(--line);color:var(--olive);font:700 12px/1.5 Arial,sans-serif;letter-spacing:2px;text-transform:uppercase}
+.story-body em{color:#d9cedd}
+.story-body strong{color:var(--purple-bright);font-weight:700}
+.story-body blockquote{margin:2em 0;padding:5px 0 5px 22px;border-left:3px solid var(--orange);color:#d2c5d5;font-size:20px;font-style:italic;line-height:1.65}
+.interlude{margin:2.2em 0;padding:20px 22px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(135deg,rgba(125,53,160,.11),rgba(155,171,98,.07))}
+.interlude-label{margin:0 0 9px;color:var(--olive);font:700 9px/1.5 Arial,sans-serif;letter-spacing:2px;text-transform:uppercase}
+.interlude p{margin:0 0 .7em}
+.music-links{display:flex;flex-wrap:wrap;gap:12px 20px;margin-top:12px;font:700 11px/1.5 Arial,sans-serif;letter-spacing:.5px;text-transform:uppercase}
+.photo{margin:2.2em auto;max-width:520px;text-align:center}
+.photo img{display:block;width:100%;max-height:520px;object-fit:contain;border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 32px rgba(0,0,0,.32)}
+.photo figcaption{margin-top:10px;color:var(--muted);font:10px/1.5 Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase}
+.endmark{text-align:center;margin:55px 0 5px;color:var(--purple-bright);font-size:25px;letter-spacing:8px}
+.archive-footer{margin-top:42px;padding-top:22px;border-top:1px solid var(--line);text-align:center;color:var(--muted);font:9px/1.8 Arial,sans-serif;letter-spacing:2px;text-transform:uppercase}
+@media(max-width:560px){.shell{width:min(94vw,720px);padding-top:18px}.topline{font-size:8px;letter-spacing:1.2px}.card{padding:30px 22px;border-radius:12px}.story-body{font-size:17px;line-height:1.78}.story-body blockquote{font-size:18px}}
+@media print{body{background:#fff;color:#222}.card{box-shadow:none;background:#fff;border:0}.topline,.archive-footer{color:#666}.story-header h1{color:#633c70}.story-body h2{color:#56633a}.story-body strong{color:#633c70}}
+</style>
 </head>
-
 <body>
-
-<main class="shell">
-
-  <section class="card archive-card">
-
-   <header class="archive-header">
-  <div>
-    <p class="eyebrow">AWESOME ASSHOLE / ARCHIVE</p>
-    <h1>THE ADVERTISING PITCH</h1>
-  </div>
-
-  <a class="quiet" href="../">← ARCHIVE DIRECTORY</a>
+<div class="shell">
+<nav class="topline" aria-label="Archive navigation">
+<span>Awesome Asshole / Private Archive</span>
+<a href="../../index.html">← Archive index</a>
+</nav>
+<main class="card">
+<header class="story-header">
+<p class="kicker">Archive 04 · 20–28 July 2026</p>
+<h1>Storrie &amp; Magic Monkey</h1>
+<p class="subtitle">Van Mur tot Huis</p>
+<p class="tagline">An eight-day romantic comedy about two women, one circus, several chickens, and the increasingly inconvenient business of falling in love.</p>
+<div class="meta"><span>A story in eight days</span><span>Two monkeys, one circus</span><span>Still in progress</span></div>
 </header>
-
-    <div class="rule"></div>
-
-    <article class="memory">
-
-      <p>It started with a picture.</p>
-
-      <p>I don't remember knowing anything about you yet. I just remember being drawn to you.</p>
-
-      <p>The photograph. Clear. Monochrome. Your eyes were bright and seemed to look straight through me, but there was something playful behind them.</p>
-
-      <p>Then there was your voicenote.</p>
-
-      <p>I remember listening to it and trying to work out how on earth your name was spelled.</p>
-
-      <p><strong>Döhne.</strong></p>
-
-      <p>A photograph, a voice, and a name I couldn't quite figure out.</p>
-
-      <p>Apparently, that was enough to get my attention.</p>
-
-      <p>So, being brave and all, I liked the picture.</p>
-
-      <div class="evidence">
-        <div class="evidence-label">BEWYSSTUK A1</div>
-        <img class="evidence-image" src="assets/the-picture.jpg" alt="The photograph that started the conversation.">
-        <div class="evidence-text">The photograph that started the conversation.</div>
-        <div class="status"><strong>STATUS:</strong> Evidence of an apparently consequential like.</div>
-      </div>
-
-      <p>I said hello; you replied.</p>
-
-      <p>Very quickly, my profile was turned into an ad.</p>
-
-      <p>You were intrigued by the <em>ad to my life</em> and wanted to know who my target audience was.</p>
-
-      <p>Funny thing is, I didn't know you worked in marketing...yet (Dis soos CrossFit, hoe weet jy?).</p>
-
-      <p>I also knew very little about advertising, just a handful of phrases floating around somewhere in my brain.</p>
-
-      <p>Target audience, demographics, market share — I decided that was enough to build an entire campaign.</p>
-
-      <p>Toe werk ek met wat ek het.</p>
-
-      <p>The week had been as kind as a vegetarian fox in a henhouse.</p>
-
-      <p>The campaign was looking for someone kind, curious, emotionally mature, and who laughed at terrible jokes.</p>
-
-      <p>Demographics were flexible.</p>
-
-      <p>You laughed and said we might be competing for the same market share.</p>
-
-      <p>I figured maybe we weren't competing at all, simply testing <strong>brand compatibility.</strong></p>
-
-      <p>Ever the overachiever, you took it one step further: brand collaboration.</p>
-
-      <p>Two strangers on Hinge had managed to create an advertising campaign for a relationship neither of them knew they were applying for.</p>
-
-      <p>The application kept progressing.</p>
-
-      <div class="evidence">
-        <div class="evidence-label">BEWYSSTUK B1</div>
-        <img class="evidence-image" src="assets/the-advertisement.jpg" alt="The photograph from my side of the campaign.">
-        <div class="evidence-text">The photograph from my side of the campaign.</div>
-        <div class="status"><strong>STATUS:</strong> Evidence suggests graves, powerful outfits, and flower hats may have influenced the decision-making...Wie weet hierdie dinge?</div>
-      </div>
-
-      <p>Randomly (as things tend to happen in our world), we discovered we both loved <strong>Patch Adams</strong>.</p>
-
-      <p>You'd watched it a hundred times; it still made you cry.</p>
-
-      <p>Important discovery: same favourite part — <strong>the gynaecology congress.</strong></p>
-
-      <p>We both knew exactly why that was funny.</p>
-
-      <p><strong>Turns out we were both rather gynaecologically inclined.</strong><br>
-      You, a baby lesbian.<br>
-      Me, a lifetime gay.</p>
-
-      <p>The campaign was looking very promising.</p>
-
-      <p>Conversations moved beyond advertising and into the slightly more useful business of finding out who the other person actually was.</p>
-
-      <p>Work. Weekends. Friends. Family.</p>
-
-      <p>And then padel.</p>
-
-      <p>You suggested we should go play.</p>
-
-      <p>It turned out to be significantly more complicated than simply deciding to play.</p>
-
-      <p>Singles or doubles? Padel or pickleball? Different courts, different venues — there were a surprising number of variables involved in getting two randos onto a court.</p>
-
-      <p>A full menu of possibilities was presented.</p>
-
-      <p>Various combinations of padel, pickleball and alternative courts, with the final option being the wonderfully sensible idea that we could simply <strong>meet each other for lunch somewhere like normal people.</strong></p>
-
-      <p>I opted for a combination of option 3 and option 5.</p>
-
-      <p>Which, in retrospect, feels about right.</p>
-
-      <p>I refuse to be a normal person, but apparently very willing to compromise.</p>
-
-      <p>Somewhere in all of this, we also discovered that we were both Pretoria girls.</p>
-
-      <p>Naturally, this required supporting documentation:</p>
-
-      <p><a class="archive-link" href="https://music.youtube.com/watch?v=pUbS_P-OyRY&amp;si=DNxw8nhfQaUfjsLJ" target="_blank" rel="noopener noreferrer">PRETORIA GIRL — Desmond and the Tutus</a></p>
-
-      <p>Eventually, there was a court booked at Groenkloof.</p>
-
-      <p>We were going to meet.</p>
-
-      <p>And I had absolutely no idea that I was about to meet the person who would become <strong>YOU</strong>.</p>
-
-    </article>
-
-    <footer>SOME STORIES ARE WORTH KEEPING.</footer>
-
-  </section>
-
+<article class="story-body">
+<h2>1. Two monkeys and a rather serious circus</h2>
+<p>Monday morning was not designed for romance.</p>
+<p>It was designed for inboxes, meetings, deadlines and the sort of adult responsibilities that arrive whether one is emotionally prepared for them or not.</p>
+<p>Storrie had promised Magic Monkey a bedtime story. Unfortunately, the machinery of Monday had intervened, so the story arrived at 10:03 in the morning.</p>
+<p>It was called <em>Two Monkeys Sleeping</em>.</p>
+<p>In it, two monkeys at the Central Park Zoo slept close together, their fingers touching. Nothing spectacular happened. They simply rested, safe in the presence of another living creature.</p>
+<p>Magic Monkey read it and felt something give way.</p>
+<p>It was like exhaling after not realizing she'd been holding her breath.</p>
+<p>Storrie, who was clearly pleased with the result of her literary delivery, pointed out that the story required two apes.</p>
+<p>Magic Monkey considered the proposal.</p>
+<p>"Guess you're my monkey then... and my circus."</p>
+<p>And so the circus began.</p>
+<p>Neither woman had applied for membership. There had been no auditions, no health-and-safety inspection, and certainly no discussion about who would be responsible for the animals. But the positions were filled.</p>
+<p>Storrie was the monkey. Magic Monkey was the circus. Or possibly the other way around, depending on which department was reporting.</p>
+<p>The first few days were mostly a question of how two grown women were supposed to carry on with their lives when their attention had developed a habit of wandering off to Colbyn.</p>
+<p>They tried to work.</p>
+<p>They really did.</p>
+<p>There were meetings, inboxes, children, errands, and the odd fire that needed putting out. There was a banana left on Magic Monkey's desk by Stella, which was either a touching gesture or a sign that the monkey department had begun infiltrating the workplace.</p>
+<p>There was Evidence A. There was a pinned-up girl. There were inbox reminders and the discovery that one could be entirely predictable and still be wonderfully seen.</p>
+<p>Storrie sent photographs of new white Converse. Magic Monkey requested more. The neon pink pair, already christened Highlighter by Marseille, also required inspection.</p>
+<p>The sneaker department was thriving.</p>
+<figure class="photo">
+<img src="assets/pink-converse.jpeg" alt="The neon pink Converse, nicknamed Highlighter" loading="lazy">
+<figcaption>Highlighter · the sneaker department</figcaption>
+</figure>
+<p>The work department was less impressed.</p>
+<p>By late afternoon, Storrie had admitted that she wanted to kiss Magic Monkey's face.</p>
+<p>Magic Monkey's response was admirably efficient.</p>
+<p>"You should!!!"</p>
+<p>No lengthy committee process. No unnecessary paperwork. Just approval.</p>
+<p>It was becoming difficult to pretend this was ordinary friendship with an unusually high volume of emojis.</p>
+<p>That evening, Storrie went to the bath with Angus and Julia Stone. Magic Monkey was obliged to consider the company rather questionable. Tyson and Dash also appeared to have opinions about the arrangements, with Tyson particularly interested in the possibility of joining the relaxation session.</p>
+<aside class="interlude">
+<p class="interlude-label">The bath-time soundtrack</p>
+<p>Angus &amp; Julia Stone, invited into the bath-time story.</p>
+<div class="music-links"><a href="https://open.spotify.com/playlist/7LmCYJhRBUW7h3eg7mfaY2?si=9quFifuNQgmxQSMBC5tjOw&utm_source=copy-link&pi=nweFhI5ETEWIg" target="_blank" rel="noopener noreferrer">Open the Angus &amp; Julia Stone playlist</a></div>
+</aside>
+<p>Storrie pointed out that Magic Monkey would be too busy watching the dog to look at her.</p>
+<p>The evening ended with talk of Friday. A night out, perhaps. Or a quiet evening. Magic Monkey admitted that she didn't have a list of trusted places. Party Henda was outside her comfort zone, while Logistics Henda was preparing an e-clipboard.</p>
+<p>Storrie was happy with whatever the plan became.</p>
+<p>As long as she was there.</p>
+<p>It was a small sentence, casually delivered. But it was beginning to become the most important condition in the entire circus.</p>
+<h2>2. The inconvenient geography of wanting someone</h2>
+<p>The trouble with enjoying someone's company is that eventually you have to go somewhere without them.</p>
+<p>Magic Monkey had work in Cape Town. Storrie had work and family and a life that did not politely suspend itself just because someone had become unusually interesting.</p>
+<p>They tried to manage the distance with music, voice notes, jokes and an ambitious amount of administrative nonsense.</p>
+<aside class="interlude">
+<p class="interlude-label">A little music across the distance</p>
+<p>The two shared Blink-182 links from 23 July.</p>
+<div class="music-links"><a href="https://music.youtube.com/watch?v=xUNqsfFUwhY&si=CrNGpir1lR-r5o5W" target="_blank" rel="noopener noreferrer">Henda&#x27;s song</a><a href="https://youtu.be/9Ht5RZpzPqw?si=BbTidl1BKAwF5OGI" target="_blank" rel="noopener noreferrer">Döhne&#x27;s Thursday vibes</a></div>
+</aside>
+<p>There was the proposal to marry Precious so that she could become legal, despite Magic Monkey already being perfectly legal herself, was not an option at the time. A government department was invented. An email address was proposed. The National Party was apparently involved. Evidence would be required, and redactions were inevitable.</p>
+<p>There were roosters, too.</p>
+<p>Too many roosters. Too many girlfriends. A complicated poultry situation that required the services of CrossFit Christina and possibly a flight-booking department.</p>
+<p>The absurdity was useful. It gave them something to laugh about while the more difficult truth sat quietly underneath: they were not particularly enjoying being apart.</p>
+<p>Storrie made her way toward Magic Monkey when she could. Sometimes the timing worked. Sometimes life interfered. There were journeys that were worth it even when they did not go quite as planned.</p>
+<p>"Life happens," Storrie said. "Net stukke beter when it happens with you."</p>
+<p>It was a simple observation, but it shifted something.</p>
+<p>The attraction was no longer just about the thrill of a message arriving or the anticipation of a kiss. It was beginning to involve the ordinary business of life. Work, travel, children, tiredness, logistics. The things that make up a real day.</p>
+<p>And, inconveniently, the person she wanted was becoming part of how Storrie imagined those days.</p>
+<p>Magic Monkey was discovering the same thing.</p>
+<p>She had started to notice how easily Storrie occupied her thoughts. Not just when there was a song to share or a joke to make. In the middle of work. In the quiet. In the spaces between tasks.</p>
+<p>The absence had become noticeable.</p>
+<p>The language was failing.</p>
+<p>Missing someone sounded too small. Longing sounded like something written by a Victorian who owned a waistcoat and a very dramatic horse. <em>Saudade</em> was closer, but required a Portuguese dictionary and perhaps a support group.</p>
+<p>There was a hum. A persistent pull. Someone who had quietly become part of the inside of one's head.</p>
+<p>Magic Monkey considered the available words and rejected them all.</p>
+<p>A new word was required.</p>
+<p>After careful prompting, the Language Department delivered its decision:</p>
+<p><em></em>Mur<em></em>.</p>
+<p>A noun. A verb. A condition.</p>
+<p>The quiet, persistent pull toward someone who has become part of your inner world. Gentler than longing, deeper than simply missing them.</p>
+<p>Storrie considered the definition.</p>
+<p>Then she made it stronger.</p>
+<p>"Moerse Mur."</p>
+<p>The word was immediately adopted.</p>
+<p>It was also immediately overused.</p>
+<p>But that was the point. It was theirs. A little ridiculous, a little serious, and exactly the right size for something neither woman had quite known how to name.</p>
+<p>And then the conversation took a turn.</p>
+<p>Magic Monkey asked the question that had been waiting beneath all the jokes.</p>
+<p>Was this real?</p>
+<p>Not just the excitement. Not just the flirting. Not just the pleasure of finding someone who could keep up with her imagination. Was this the long-road, fugly-hiking-boots kind of real?</p>
+<p>Storrie had been asking herself the same thing.</p>
+<p>She could already smell the dust of the road they might travel together.</p>
+<p>That was a frightening thing to say, even in a private conversation between two people who had become remarkably good at saying brave things.</p>
+<p>But Storrie said it.</p>
+<p>And Magic Monkey, who had been trying to find a word for the feeling, began to understand that perhaps the word was only the beginning.</p>
+<h2>3. Friday, and the first brave arrangements</h2>
+<p>By Friday, the week had acquired a finish line.</p>
+<p>There was work to complete, recordings to finish, and a collection of practical arrangements that had to be made before anyone could get to the business of being together.</p>
+<p>Storrie was counting down.</p>
+<p>Magic Monkey was counting down.</p>
+<p>The calendar was doing its best to remain professional.</p>
+<p>There was talk of taking leave for a future date, of school runs and family assistance, and of an Uber that had been prebooked for six. The instructions were clear: be there at six. Anything else was a bonus.</p>
+<p>It was a wonderfully Henda-like approach to romance. A little logistics, a little confidence, and a refusal to leave everything to chance.</p>
+<p>The future was also starting to appear in the conversation.</p>
+<p>Flights. A hire car. A long weekend. A beach. Kalk Bay. The possibility of walking for miles along the cold shoreline and drinking red wine together.</p>
+<p>There was a cabin to consider, and Misty Cliffs, and the practical question of where two people might stay when they wanted to be somewhere beautiful together.</p>
+<p>Storrie imagined Magic Monkey sitting on the cabin couch with a book.</p>
+<p>She also wondered whether there would be any actual reading.</p>
+<p>Magic Monkey had other suspicions.</p>
+<p>The booking process became an exercise in administrative escalation. ID details, email addresses, Discovery profiles. Then bra size, shoe size, DNA tests and family history.</p>
+<p>At some point, a person might reasonably have asked whether they were booking accommodation or applying for a security clearance.</p>
+<p>Magic Monkey used the word "partner" when explaining the booking to the host.</p>
+<p>She was smiling like an idiot.</p>
+<p>That detail mattered more than the cabin.</p>
+<p>Because there is a particular kind of courage in using a word before you know exactly how it will feel in someone else's ears. It is a small declaration made in an ordinary conversation. No grand announcement. No speech. Just a word that lets the future know it is being considered.</p>
+<p>Storrie was not frightened by it.</p>
+<p>She was beginning to imagine the same future.</p>
+<p>Not as a fantasy in which all the inconvenient bits disappeared. The children would still need lifts. Work would still happen. There would still be chickens, errands, tired evenings and the occasional administrative disaster.</p>
+<p>But perhaps those things could be part of the adventure too.</p>
+<p>Perhaps the point wasn't to escape ordinary life.</p>
+<p>Perhaps the point was to have someone with whom ordinary life became something worth looking forward to.</p>
+<h2>4. Domesticity, with a side order of Mur</h2>
+<p>Sunday brought chickens.</p>
+<p>The chicken-catching operation had been an epic failure. The birds remained at large in Amos Street, crowing as though they had personally defeated the authorities. Darlington's assistance was required.</p>
+<p>Storrie moved on to domestic duties with Amy Winehouse for company. She was teaching Amy how to perform all the sexy domestic tasks Amy had apparently missed out on.</p>
+<p>Magic Monkey was also domesticated, or so she claimed. She had shopping socks and was preparing to design a space for an asshole.</p>
+<p>A brief typo suggested that the space itself might be the asshole. This was corrected. The distinction was important.</p>
+<p>Storrie was happy to have her thoughts vandalize the place. Magic Monkey threatened monkey tattoos.</p>
+<p>The domestic department had become a contact sport.</p>
+<p>There was dinner. There was wine. There was a film. There were children and family and the small, unglamorous details of a life already in progress.</p>
+<p>Magic Monkey offered a hug when Storrie was having a difficult moment.</p>
+<p>Storrie accepted it.</p>
+<p>She also called Magic Monkey her banana, because apes love bananas. Magic Monkey volunteered as tribute.</p>
+<p>It was difficult to tell whether the circus was becoming more romantic or simply more poorly supervised.</p>
+<p>But something else was happening.</p>
+<p>They were beginning to talk about the people around them. About family. About the possibility of being known by one another's people. About what it might mean to make room for someone in a life that was already full.</p>
+<p>Magic Monkey was sitting on her mother's stoep, thinking about two idiots who had somehow put the world right again. Her sister was happy for her. Her mother was unapologetically herself. The family conversation had begun to make space for Storrie, even when Storrie wasn't physically there.</p>
+<p>There was laughter, of course. There was the purple clothing that prompted a little future-focused teasing. There was Sade in the bath, and the jury still deliberating on the question of musical bath companions.</p>
+<p>But beneath the silliness, the questions were becoming more personal.</p>
+<p>Could Storrie be seen when she was not at her best?</p>
+<p>Could she be loved when she was tired, uncertain, or crying at a film?</p>
+<p>Could Magic Monkey be trusted with the parts of her that were not always brave?</p>
+<p>Storrie asked whether she was still lovable when she ugly cried.</p>
+<p>Magic Monkey's answer was immediate.</p>
+<p>She had her. Even when she ugly cried.</p>
+<p>It was not a grand romantic gesture. It was better than that. It was an answer about the ordinary version of a person, the one who doesn't always look beautiful in the light, the one who has a bad day and a full inbox and perhaps a chicken problem.</p>
+<p>The one who is still wanted.</p>
+<p>And that was beginning to matter more than being impressive.</p>
+<h2>5. The deliberate part</h2>
+<p>There was a moment in the middle of all the nonsense when Storrie admitted that some of Magic Monkey's words made a little fear wake up.</p>
+<p>It was not because she wanted to run.</p>
+<p>It was because she didn't.</p>
+<p>There is a particular vulnerability in finding something you want to keep. The mind, which has spent years learning how to protect itself, can become suspicious of happiness. It asks questions. It checks the exits. It looks for the small print.</p>
+<p>Magic Monkey did not dismiss the fear.</p>
+<p>She did not ask Storrie to become less careful or more certain than she was.</p>
+<p>She simply made her position clear.</p>
+<p>She was choosing Storrie. Deliberately. Not just when the messages were funny or the music was good or the day had gone well. She was choosing the relationship, the complicated mixture of lives, the real person on the other side of the screen.</p>
+<p>Storrie answered with a thousand dittoes.</p>
+<p>It was a very Storrie response: heartfelt, slightly theatrical, and somehow still understated.</p>
+<p>The conversation wandered into the <em>Meet Joe Black</em> clip and the business of loving someone. It moved between jokes and tenderness, between the fear of getting something precious wrong and the relief of finding someone who could meet that fear without making it worse.</p>
+<aside class="interlude">
+<p class="interlude-label">The Meet Joe Black moment</p>
+<p>The clip that accompanied the conversation about choosing and loving someone.</p>
+<div class="music-links"><a href="https://share.google/KZcaMEtv1gf88aqLl" target="_blank" rel="noopener noreferrer">Revisit the Meet Joe Black clip</a></div>
+</aside>
+<p>Magic Monkey said she had never doubted what she felt.</p>
+<p>For her, it had been true from the first moment she felt Storrie against her skin.</p>
+<p>They remembered an earlier goodbye, a hand against a body, a touch that had been deliberate. Storrie had wondered whether she had imagined it. Magic Monkey confirmed that she hadn't.</p>
+<p>There had been intention in it.</p>
+<p>That was the important part.</p>
+<p>Not an accident. Not a misunderstanding. Not a moment that one person had invented and the other had forgotten.</p>
+<p>A deliberate touch.</p>
+<p>A deliberate choice.</p>
+<p>A person saying, without needing to make a speech, <em>I want to be close to you.</em></p>
+<p>Storrie had spent time wondering whether the feeling was mutual, whether she was reading too much into things, whether something this good could really be happening.</p>
+<p>Now she knew.</p>
+<p>And Magic Monkey knew that Storrie knew.</p>
+<p>The two of them were not suddenly fearless. They were simply learning that courage did not require the absence of fear.</p>
+<p>Sometimes courage looked like saying, "I choose you today even more easily than yesterday."</p>
+<p>Sometimes it looked like asking someone to imagine their fingertips touching.</p>
+<p>Sometimes it looked like letting someone see the parts of you that still trembled.</p>
+<p>And sometimes, apparently, it looked like discussing whether one was the spoon or the starfish.</p>
+<h2>6. The pageant, the chicken and the next chapter</h2>
+<p>Monday arrived with a new crisis.</p>
+<p>Storrie had entered the world of Mevrou SA.</p>
+<p>The pageant was for middle-aged women seeking society's approval through the traditional medium of a damestee. There would be table settings. Salmon pink. Sea green. Possibly a floral blouse. A level of elegance that suggested the committee had never encountered a woman who could invent an emotional vocabulary and still be distracted by a chicken.</p>
+<p>The application website had been hacked.</p>
+<p>All applications were gone.</p>
+<p>This was a serious setback.</p>
+<p>Magic Monkey offered to assist with recruitment. There were potential candidates, including women with deep pockets and holiday homes by the sea. The pageant committee was not yet convinced, but the campaign was gathering momentum.</p>
+<p>There was also Big Bag Nugget, who inspired a declaration of love at first sight.</p>
+<p>"I lobede you."</p>
+<p>A promising start to any relationship.</p>
+<p>Magic Monkey was buried in Excel and NAPPI codes. Storrie was thinking about her. Work continued to demand attention, although it was becoming increasingly difficult to persuade either woman that work was the most interesting thing happening.</p>
+<p>By Tuesday morning, the circus had acquired a new ritual.</p>
+<p>Magic Monkey sent a message before the day could grab Storrie. She wanted her to remember that someone was grateful she existed.</p>
+<p>Storrie replied that two apes were brave enough to wear their hearts on their sleeves.</p>
+<p>There was a map pin. Magic Monkey sent it so Storrie would know where to run. She was there, arms open in anticipation.</p>
+<figure class="photo">
+<img src="assets/location-pin.jpeg" alt="The map pin sent so Storrie would know where to run" loading="lazy">
+<figcaption>A pin, and a place to run to</figcaption>
+</figure>
+<p>Storrie admitted that Magic Monkey had found the key to her confidence vault. She wasn't entirely sure how, but she was comfortable with her keeping it.</p>
+<p>Then came the audiologist.</p>
+<p>Storrie had something she wanted Magic Monkey to hear for a very long time. Magic Monkey imagined the sound of her name repeated.</p>
+<p>"Döhne... Döhne... Döhne."</p>
+<p>Some things were worth repeating.</p>
+<p>There was also Ovo Max, who stole lunch, and the possibility of installing cameras to monitor the chickens. There was pickleball, during which Storrie warned that she might miss a few balls because her thoughts were wandering toward a certain asshole.</p>
+<p>Magic Monkey had become a rather serious distraction.</p>
+<p>The day was full. There were work problems, family responsibilities, and the small practical negotiations that make up a real life. But they kept making room for each other.</p>
+<p>A few minutes became hours.</p>
+<p>And then it was time to leave.</p>
+<p>Storrie found it harder than she expected. The time together had made her feel like an orphan in a sweetie shop. She thanked Magic Monkey for making time for her, and admitted how difficult it was to let her go.</p>
+<p>The conversation moved, as it always did, back into the familiar territory of food, family and absurd future possibilities. Krummelpap with sugar and milk. A grandmother's kitchen. Vegan sausages. Diapers. A Bietjie Bridesmaid situation involving drag-queen makeup. The possibility of needing a whole damn bird.</p>
+<p>It was not a conventional plan.</p>
+<p>It was not supposed to be.</p>
+<p>Because the week had not produced a neat ending. It had produced something much more interesting: two people who were beginning to understand that they wanted to keep doing this.</p>
+<p>Not just the flirting.</p>
+<p>Not just the messages.</p>
+<p>The life.</p>
+<p>The children and the family and the work and the chickens. The difficult conversations and the easy laughter. The music, the travel, the ordinary days. The possibility of being tired in the same room. The possibility of being brave together.</p>
+<p>They had begun with two monkeys sleeping, fingers touching.</p>
+<p>Now they were awake.</p>
+<p>They were making plans. They were learning each other's rhythms. They were discovering that the person who made you laugh could also make you feel safe enough to say the frightening things.</p>
+<p>And the word <em>Mur</em> had become something more than a clever invention. It was the name of the pull that brought them back to each other, even when the day was full and the distance was inconvenient.</p>
+<p>The word <em>Huis</em> was beginning to appear too.</p>
+<p>Not as a destination they had already reached. Not as a promise that life would suddenly become simple.</p>
+<p>As an intention.</p>
+<p>A place to make for one another, slowly and deliberately, while the rest of the world carried on being the rest of the world.</p>
+<p>There were still flights to book. There were people to meet. There were places to see. There were future adventures waiting to be argued over on an e-clipboard.</p>
+<p>And somewhere in Amos Street, the chickens were still getting away with it.</p>
+<p>The circus was not closing.</p>
+<p>It was going on tour.</p>
+<p>Two apes. One growing collection of shared words. A long road that might be dusty and might be beautiful and would almost certainly involve questionable logistics.</p>
+<p>This time, they were not just imagining the next chapter.</p>
+<p>They were choosing to go there together.</p>
+<div class="endmark" aria-hidden="true">◦ · ◦</div>
+</article>
+<footer class="archive-footer">Awesome Asshole · Private Archive Administration<br>Two monkeys. One circus. Still writing.</footer>
 </main>
-
+</div>
 </body>
 </html>
